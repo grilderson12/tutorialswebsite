@@ -8,38 +8,36 @@ $email = $_POST["email"];
 
   if($email) {
     
-  echo "Sign UP now :)";
-    
     if($password) {
       
-      echo $password, " is accept it.";
+      echo $password, " is accept it.<br />";
       
     }else {
       
-      echo "Wrong Password";
+      echo "Wrong Password<br />";
       
     }
       
       if($username) {
         
-        echo $username, " is accept it";
+        echo $username, " is accept it<br />";
         
       }else {
         
-        echo "Wrong Username";
+        echo "Wrong Username<br />";
         
       }
       
         if($username&&$password) {
           
-          echo 'Congrats your has been accept it.you can login now.';
+          echo 'Congrats your account has been accept it.you can login now.<br />';
           
           $insert = 'INSERT into users(username, password, email) VALUES("'.$username.'","'.$password.'","'.$email.'")';
           mysql_query($insert);
           
         }else {
           
-          echo 'Fail to LOGIN, Please try again now.';
+          echo 'Fail to LOGIN, Please try again now.<br />';
           
         }
     
