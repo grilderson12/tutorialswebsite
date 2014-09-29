@@ -1,46 +1,44 @@
 <?php
 
-require "dbconfig.php";
+	echo "SIGN UP NOW<br />";
+
+require "dbconnect.php";
 
 $username = $_POST["username"];
-$password = $_POST["password"];
+$password = $_post["password"];
 $email = $_POST["email"];
 
-  if($email) {
+if($email) {
+
+  if($password) {
     
-    if($password) {
+    echo $password, " is accept it.<br />";
+    
+    if($username) {
       
-      echo $password, " is accept it.<br />";
-      
-    }else {
-      
-      echo "Wrong Password<br />";
-      
-    }
-      
-      if($username) {
-        
-        echo $username, " is accept it<br />";
-        
-      }else {
-        
-        echo "Wrong Username<br />";
-        
-      }
+      echo $username, "is accept it.";
       
         if($username&&$password) {
           
-          echo 'Congrats your account has been accept it.you can login now.<br />';
+          echo "Congrats your account has been take it.";
           
-          $insert = 'INSERT into users(username, password, email) VALUES("'.$username.'","'.$password.'","'.$email.'")';
+          $insert 'INSERT into users(username, password, email) VALUES("'.$username.'","'.$password.'","'.$email.'")';
           mysql_query($insert);
           
-        }else {
-          
-          echo 'Fail to LOGIN, Please try again now.<br />';
-          
         }
+      
+    }else {
+    
+      echo "Wrong username.";  
+      
+    }
+    
+  }else {
+    
+    echo "Wrong password.";
     
   }
+
+}
 
 ?>
